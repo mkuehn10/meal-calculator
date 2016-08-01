@@ -56,17 +56,24 @@ Bill.prototype.printTotal = function() {
 
 Bill.prototype.printTips = function() {
     var tipRate = this.tipRate;
+    var totalTip = 0;
     this.diners.forEach(function(diner) {
         console.log(diner.getDinerName() + ' needs to tip $' + diner.calculateTip(tipRate).toFixed(2));
+        totalTip += diner.calculateTip(tipRate);
     });
+    console.log("Total tip for waitress: $" + totalTip.toFixed(2));
 };
 
 Bill.prototype.breakdown = function() {
     var taxRate = this.taxRate;
     var tipRate = this.tipRate;
+    var totalBill = 0;
     this.diners.forEach(function(diner) {
         console.log(diner.getDinerName() + ' owes $' + diner.calculateTotal(taxRate, tipRate).toFixed(2));
+        totalBill += diner.calculateTotal(taxRate, tipRate);
     });
+    console.log('Total bill: $' + totalBill.toFixed(2));
+    
 };
 
 var dishOne = new Dish("Moo Goo Gai Pan", 12.75);
