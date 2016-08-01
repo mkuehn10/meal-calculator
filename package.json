@@ -1,0 +1,11 @@
+{
+  "name": "meal_calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "meal_calculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
